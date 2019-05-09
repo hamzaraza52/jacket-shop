@@ -68,6 +68,9 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+# Intellij IDEA
+.idea/
+
 # vsc settings folder
 .vscode/
 
