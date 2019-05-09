@@ -69,7 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 # vsc settings folder
-.vscode
+.vscode/
 
 # package lock
 package-lock.json
