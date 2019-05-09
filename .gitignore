@@ -67,3 +67,9 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# vsc settings folder
+.vscode/
+
+# package lock
+package-lock.json
