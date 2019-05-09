@@ -70,3 +70,9 @@ yarn-error.log
 
 # Intellij IDEA
 .idea/
+
+# vsc settings folder
+.vscode/
+
+# package lock
+package-lock.json
