@@ -7,7 +7,7 @@ export const Hero = props => {
     const HeroImage = styled.div`
       width: 100%;
       height: 512px;
-      background-image: url(${props.src});
+      background-image: url(${src});
     `;
     return (
       <HeroImage data-testid="hero-atom" {...props}>>
