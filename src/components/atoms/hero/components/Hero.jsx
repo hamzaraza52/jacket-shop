@@ -6,12 +6,12 @@ export const Hero = props => {
   if (src) {
     const HeroImage = styled.div`
       width: 100vw;
-	    max-width: 100vw;
+      max-width: 100vw;
       left: 50%;
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-	    position: relative;
+      position: relative;
       height: ${height || '512px'};
       background-image: url(${src});
     `;
