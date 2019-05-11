@@ -18,8 +18,26 @@ describe('Hero', () => {
     const ChildComponent = () => <div data-testid="child-component" />;
     const { queryByTestId } = render(
       <Hero src="/some-source/image.jpeg">
-        <ChildComponent/>
-      </Hero>);
+        <ChildComponent />
+      </Hero>
+    );
     expect(queryByTestId('child-component')).toBeTruthy();
+  });
+
+  describe('snapshot tests', () => {
+    it('renders with default props', () => {
+      const { container } = render(<Hero src="some-src" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('renders with custom props', () => {
+      const ChildComponent = () => <div data-testid="child-component" />;
+      const { container } = render(
+        <Hero src="some-src" height="240px" data-testid="some-testid">
+          <ChildComponent />
+        </Hero>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 });
