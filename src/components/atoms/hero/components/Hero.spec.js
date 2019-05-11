@@ -16,7 +16,10 @@ describe('Hero', () => {
 
   it('renders children', () => {
     const ChildComponent = () => <div data-testid="child-component" />;
-    const { queryByTestId } = render(<Hero src="/some-source/image.jpeg"><ChildComponent/></Hero>);
+    const { queryByTestId } = render(
+      <Hero src="/some-source/image.jpeg">
+        <ChildComponent/>
+      </Hero>);
     expect(queryByTestId('child-component')).toBeTruthy();
   });
 });
