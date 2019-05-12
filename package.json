@@ -44,7 +44,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "jest --config jest.config.js --passWithNoTests"
+    "test": "jest --config jest.config.js --passWithNoTests",
+    "test:watch": "jest --config jest.config.js --passWithNoTests --watch"
   },
   "repository": {
     "type": "git",
