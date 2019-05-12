@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`catalogue template matches the snapshot 1`] = `
+<div
+  class="css-h3xb4e"
+  data-testid="hero-atom"
+  src="placeholder"
+/>
+`;
