@@ -2,7 +2,7 @@
 
 exports[`Hero snapshot tests renders with custom props 1`] = `
 <div
-  class="css-8jgnfd"
+  class="css-wit2t5-HeroImage e1blgcp90"
   data-testid="some-testid"
 >
   <div
@@ -13,7 +13,7 @@ exports[`Hero snapshot tests renders with custom props 1`] = `
 
 exports[`Hero snapshot tests renders with default props 1`] = `
 <div
-  class="css-1gcj3ef"
+  class="css-1riqis2-HeroImage e1blgcp90"
   data-testid="hero-atom"
 />
 `;
