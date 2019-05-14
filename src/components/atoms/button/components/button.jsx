@@ -14,32 +14,39 @@ export const Button = ({
   const disabled = condition === 'disabled';
   const getLinkAddress = () => (!disabled ? href : null);
 
-  const StyledLink = styled(props => <Link {...props} />)`
-    display: inline-block;
-    color: blue;
-    border: 2px solid #000;
-    text-align: center;
-    text-align: center;
-    padding: 5px;
-    text-decoration: none;
-    background-color: red;
-    box-shadow: 10px 5px 5px #999999;
-  `;
+  const defaultColours = {
+    textColour: '#751A14',
+    borderColour: '#083F75',
+    backgroundColour: '#2171C2',
+    shadowColour: '#3D420B'
+  };
 
-  const Button = styled.button`
-    display: inline-block;
-    color: blue;
-    border: 2px solid #000;
-    text-align: center;
-    text-align: center;
-    padding: 5px;
-    text-decoration: none;
-    background-color: red;
-    box-shadow: 40px;
-    box-shadow: 10px 5px 5px #999999;
-  `;
+  const { colours = defaultColours, fontSize, fontFamily } = otherProps;
+
+  const buttonStyles = `
+  display: inline-block;
+  color: ${colours.textColour};
+  border: 1px solid ${colours.borderColour};
+  text-align: center;
+  font-size: ${fontSize || '12px'};
+  font-family: ${fontFamily || 'helvetica'} sans-serif;
+  padding: 5px;
+  text-decoration: none;
+  background-color: ${colours.backgroundColour};
+  box-shadow: 2px 1px 1px ${colours.shadowColour};
+  cursor: default;
+  box-sizing: border-box;
+`;
+
+  let linkRef;
+
+  if (!disabled) linkRef = href;
+
+  const StyledLink = styled(props => <Link {...props} />)(buttonStyles);
+
+  const Button = styled.button(buttonStyles);
   return href ? (
-    <StyledLink to={href}>{text}</StyledLink>
+    <StyledLink to={linkRef}>{text}</StyledLink>
   ) : (
     <Button onClick={onClick} disabled={disabled}>
       {text}
