@@ -8,9 +8,4 @@ describe('catalogue template', () => {
     const { getByTestId } = render(<CatalogueTemplate />);
     expect(getByTestId('hero-atom')).toBeTruthy();
   });
-
-  it('matches the snapshot', () => {
-    const { container } = render(<CatalogueTemplate />);
-    expect(container.firstChild).toMatchSnapshot();
-  })
-})
+});
