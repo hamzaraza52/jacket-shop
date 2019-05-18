@@ -25,7 +25,7 @@ describe('Hero', () => {
     expect(queryByTestId('child-component')).toBeTruthy();
   });
 
-  it('renders the Hero component with a custom data-test-id', () => {
+  it('renders the Hero component with a custom data-testid', () => {
     const { queryByTestId } = render(
       <Hero src="/some-source/image.jpeg" data-testid="custom-testid" />
     );
