@@ -10,8 +10,9 @@ describe('Hero', () => {
   });
 
   it('does not render the Hero component if it is not passed an image src', () => {
-    const { queryByTestId } = render(<Hero />);
+    const { queryByTestId, container } = render(<Hero />);
     expect(queryByTestId('hero-atom')).toBeFalsy();
+    expect(container.firstChild).toBe(null);
   });
 
   it('renders children', () => {
@@ -24,20 +25,11 @@ describe('Hero', () => {
     expect(queryByTestId('child-component')).toBeTruthy();
   });
 
-  describe('snapshot tests', () => {
-    it('renders with default props', () => {
-      const { container } = render(<Hero src="some-src" />);
-      expect(container.firstChild).toMatchSnapshot();
-    });
-
-    it('renders with custom props', () => {
-      const ChildComponent = () => <div data-testid="child-component" />;
-      const { container } = render(
-        <Hero src="some-src" height="240px" data-testid="some-testid">
-          <ChildComponent />
-        </Hero>
-      );
-      expect(container.firstChild).toMatchSnapshot();
-    });
+  it('renders the Hero component with a custom data-test-id', () => {
+    const { queryByTestId } = render(
+      <Hero src="/some-source/image.jpeg" data-testid="custom-testid" />
+    );
+    expect(queryByTestId('custom-testid')).toBeTruthy();
+    expect(queryByTestId('hero-atom')).toBeFalsy();
   });
 });
