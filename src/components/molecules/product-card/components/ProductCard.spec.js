@@ -57,10 +57,10 @@ describe('product card', () => {
         <ProductCard product={{ ...mockProduct, currentPrice: price }} />
       );
       expect(queryByTestId('product-card-price')).toBeTruthy();
-      expect(queryByText(`£${price}`)).toBeTruthy();
+      expect(queryByText(`£50.00`)).toBeTruthy();
     });
 
-    it('does not render if the product data does not contain a display name', () => {
+    it('does not render if the product data does not contain a current price', () => {
       const { queryByTestId } = render(
         <ProductCard product={{ ...mockProduct, currentPrice: undefined }} />
       );
@@ -90,6 +90,7 @@ describe('product card', () => {
         <ProductCard product={mockProduct} onClick={onClick} />
       );
       const button = queryByTestId('button-atom');
+      expect(button).toBeTruthy();
       button.dispatchEvent(new MouseEvent('click'));
       expect(onClick).toHaveBeenCalled();
     });
