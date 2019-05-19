@@ -43,10 +43,14 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-emotion": "^10.0.9",
     "babel-preset-gatsby": "^0.1.11",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-react-hooks": "^1.6.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "jest-dom": "^3.2.2",
     "jest-emotion": "^10.0.11",
+    "jest-runner-eslint": "^0.7.3",
     "jsdom": "^15.0.0",
     "jsdom-global": "^3.0.2",
     "prettier": "^1.17.0",
@@ -65,8 +69,9 @@
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "start-storybook -p 6006",
-    "test": "jest --config jest.config.js --passWithNoTests",
-    "test:watch": "jest --config jest.config.js --passWithNoTests --watch"
+    "lint": "jest --config ./config/jest/jest.config.lint.js",
+    "test": "jest --config ./config/jest/jest.config.test.js --passWithNoTests",
+    "test:watch": "jest --config ./config/jest/jest.config.test.js --passWithNoTests --watch"
   },
   "repository": {
     "type": "git",
