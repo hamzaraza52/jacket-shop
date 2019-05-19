@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: "../../",
-  displayName: 'unit',
+  displayName: 'test',
   transform: {
     "^.+\\.jsx?$": `<rootDir>/jest-preprocess.js`,
   },
