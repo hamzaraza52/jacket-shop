@@ -5,15 +5,15 @@ import { formatPrice } from '../../../../utils/format-price/format-price';
 
 export const ProductDetails = ({ displayName, currentPrice }) => {
   const TextContainer = styled.div`
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    position: absolute;
+    background-color: rgba(220, 220, 220, 0.6);
     bottom: 0px;
-    width: 100%;
+    display: flex;
     flex-flow: column;
     justify-content: center;
-    background-color: rgba(220, 220, 220, 0.6);
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 100%;
 
     b:first-child {
       margin-top: 0.5em;
@@ -33,12 +33,16 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
   }));
   return (
     <TextContainer>
-      {displayName && <StyledText as="b" data-testid="product-card-display-name">
-        {displayName}
-      </StyledText>}
-      {currentPrice && <StyledText light data-testid="product-card-price">
-        {formatPrice(currentPrice)}
-      </StyledText>}
+      {displayName && (
+        <StyledText as="b" data-testid="product-card-display-name">
+          {displayName}
+        </StyledText>
+      )}
+      {currentPrice && (
+        <StyledText light data-testid="product-card-price">
+          {formatPrice(currentPrice)}
+        </StyledText>
+      )}
     </TextContainer>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-export const Card = ({ imgSrc, children, ...dataAttributes }) => {
+export const Card = ({ imgSrc, children, ...props }) => {
   const Container = styled.div`
     :hover {
       .c-product-card__background {
@@ -11,7 +11,7 @@ export const Card = ({ imgSrc, children, ...dataAttributes }) => {
       .c-button {
         display: flex;
       }
-      
+
       .c-product-card__unavailability-message {
         display: flex;
       }
@@ -49,7 +49,7 @@ export const Card = ({ imgSrc, children, ...dataAttributes }) => {
         className="c-product-card__background"
         data-testid="product-card-background"
       />
-      <CardContent data-testid="product-card-molecule" {...dataAttributes}>
+      <CardContent data-testid="product-card-molecule" {...props}>
         {children}
       </CardContent>
     </Container>
