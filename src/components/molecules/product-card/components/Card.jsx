@@ -2,18 +2,25 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 export const Card = ({ imgSrc, children, ...props }) => {
-  const Container = styled.div`
+  const Container = styled.div` 
+    width: 275px;
+    height: 400px;
+    
     :hover {
       .c-product-card__background {
-        filter: blur(20px);
+        transform: scale(1.05);
+      }
+
+      .c-product-card__fade {
+        opacity: 0.2;
       }
 
       .c-button {
-        display: flex;
+        opacity: 1;
       }
 
       .c-product-card__unavailability-message {
-        display: flex;
+        opacity: 1;
       }
     }
   `;
@@ -26,12 +33,24 @@ export const Card = ({ imgSrc, children, ...props }) => {
     background-size: cover;
     display: block;
     flex-flow: column;
-    transition: 0.3s all;
+    overflow: hidden;
     position: absolute;
-    top: 0px;
+    transition: 0.3s all;
+    top: -20px;
     left: 0px;
     width: 275px;
     height: 400px;
+  `;
+
+  const CardFade = styled.div`
+    background-color: #2b2b2b;
+    height: 400px;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    transition: 0.3s all;
+    top: 0px;
+    width: 275px;
   `;
 
   const CardContent = styled.div`
@@ -49,6 +68,7 @@ export const Card = ({ imgSrc, children, ...props }) => {
         className="c-product-card__background"
         data-testid="product-card-background"
       />
+      <CardFade className="c-product-card__fade" />
       <CardContent data-testid="product-card-molecule" {...props}>
         {children}
       </CardContent>
