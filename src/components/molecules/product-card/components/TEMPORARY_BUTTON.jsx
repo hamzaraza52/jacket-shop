@@ -2,32 +2,35 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 //TODO: REMOVE THIS FILE WHEN BUTTON ATOM IS COMPLETED
-export const TEMPORARY_BUTTON = ({ children, onClick }) => {
+export const TEMPORARY_BUTTON = ({ children, onClick, faux }) => {
   const StyledButton = styled.button`
     background-image: linear-gradient(to right, #3b5f91, #51828c);
-    box-shadow: 0px 0px 2px #2d2d2d;
+    border-style: none;
+    box-shadow: 0px 0px 5px #2d2d2d;
+    color: #ededed;
     display: flex;
-    color: #cccccc;
+    flex-direction: column;
+    font: 400 1.6em system-ui;
+    font-style: italic;
+    height: 16%;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60%;
     opacity: 0;
-    width: 75%;
-    height: 16%;
-    font: 400 1.6em system-ui;
-    font-style: italic;
+    text-align: center;
     text-shadow: 2px 0px 0px #2d2d2d;
-    justify-content: center;
-    border-style: none;
     transition: 0.3s all;
+    width: 75%;
 
     :hover {
       cursor: pointer;
     }
   `;
+
   return (
     <StyledButton
-      onCLick={onClick}
+      as={faux && 'div'}
       className="c-button"
       data-testid="button-atom"
     >

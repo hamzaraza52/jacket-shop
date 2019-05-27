@@ -18,25 +18,20 @@ storiesOf('Molecules | Product Card', module)
   .addDecorator(withKnobs)
   .add(
     'Default',
-    () => {
-      const staticId = text('Product ID', 'SOME_ID');
-      const displayName = text('Display Name', 'Jacket Potatoe');
-      const price = number('Current Price', 50);
-      const inStock = boolean('In Stock?', true);
-      return (
-        <Container>
-          <ProductCard
-            product={{
-              staticId: staticId,
-              displayName: displayName,
-              currentPrice: price,
-              imgSrc: exampleImgSrc,
-              inStock: inStock
-            }}
-            onClick={() => {}}
-          />
-        </Container>
-      );
-    },
+    () => (
+      <Container>
+        <ProductCard
+          product={{
+            staticId: text('Product ID', 'SOME_ID'),
+            displayName: text('Display Name', 'Jacket Potatoe'),
+            currentPrice: number('Current Price', 50),
+            imgSrc: text('Image Source', exampleImgSrc),
+            inStock: boolean('In Stock?', true)
+          }}
+          href={text('Href', '/')}
+          onClick={() => {}}
+        />
+      </Container>
+    ),
     { notes: { markdown: readMe } }
   );

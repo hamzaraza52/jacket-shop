@@ -8,7 +8,8 @@ describe('product card', () => {
     staticId: 'SWEET_JACKET',
     displayName: 'Sweet Jacket',
     currentPrice: 100.0,
-    imgSrc: 'https://some-img-src.png'
+    imgSrc: 'https://some-img-src.png',
+    inStock: true
   };
 
   it('renders the product card if product data is present', () => {
@@ -68,31 +69,49 @@ describe('product card', () => {
     });
   });
 
-  describe('button', () => {
-    it('renders if an onclick function is present', () => {
-      const { queryByTestId } = render(
+  describe('container type', () => {
+    it('renders a button if an onclick function is present and an href is not present', () => {
+      const { queryByTestId, container } = render(
         <ProductCard product={mockProduct} onClick={() => {}} />
       );
-      expect(queryByTestId('button-atom')).toBeTruthy();
+      expect(queryByTestId('container')).toBeTruthy();
+      expect(container.querySelector('button')).toBeTruthy();
+      expect(container.querySelector('a')).toBeFalsy();
     });
 
-    it('renders an unavailable message instead if an onclick function is not present', () => {
-      const { queryByTestId } = render(
-        <ProductCard product={mockProduct} onClick={undefined} />
+    it('renders a link if an href is present', () => {
+      const { queryByTestId, container } = render(
+        <ProductCard
+          product={mockProduct}
+          onClick={() => {}}
+          href="/some-href/"
+        />
       );
-      expect(queryByTestId('button-atom')).toBeFalsy();
-      expect(queryByTestId('unavailable-message')).toBeTruthy();
+      expect(queryByTestId('container')).toBeTruthy();
+      expect(container.querySelector('button')).toBeFalsy();
+      expect(container.querySelector('a')).toBeTruthy();
     });
 
-    it('fires the onClick function when the button is pressed', () => {
-      const onClick = () => {};
-      const { queryByTestId } = render(
-        <ProductCard product={mockProduct} onClick={onClick} />
+    it('does not render a button or a link if the product is out of stock', () => {
+      const { queryByTestId, container } = render(
+        <ProductCard
+          product={{ ...mockProduct, inStock: false }}
+          onClick={() => {}}
+          href="/some-href/"
+        />
       );
-      const button = queryByTestId('button-atom');
-      expect(button).toBeTruthy();
-      button.dispatchEvent(new MouseEvent('click'));
-      expect(onClick).toHaveBeenCalled();
+      expect(queryByTestId('container')).toBeTruthy();
+      expect(container.querySelector('button')).toBeFalsy();
+      expect(container.querySelector('a')).toBeFalsy();
+    });
+
+    it('does not render a button or a link if neither an onclick function nor an href is present', () => {
+      const { queryByTestId, container } = render(
+        <ProductCard product={mockProduct} />
+      );
+      expect(queryByTestId('container')).toBeTruthy();
+      expect(container.querySelector('button')).toBeFalsy();
+      expect(container.querySelector('a')).toBeFalsy();
     });
   });
 });

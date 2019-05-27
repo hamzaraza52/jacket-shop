@@ -1,33 +1,19 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { Container } from './Container';
 
-export const Card = ({ imgSrc, children, ...props }) => {
-  const Container = styled.div` 
-    width: 275px;
-    height: 400px;
-    
-    :hover {
-      .c-product-card__background {
-        transform: scale(1.05);
-      }
-
-      .c-product-card__fade {
-        opacity: 0.2;
-      }
-
-      .c-button {
-        opacity: 1;
-      }
-
-      .c-product-card__unavailability-message {
-        opacity: 1;
-      }
-    }
-  `;
-
+export const Card = ({
+  imgSrc,
+  disable,
+  children,
+  href,
+  onClick,
+  ...props
+}) => {
   const CardBackground = styled.div`
     background-image: url(${imgSrc});
-    background-color: #f7f7f7;
+    background-color: inherit;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,8 +48,15 @@ export const Card = ({ imgSrc, children, ...props }) => {
     left: 0px;
   `;
 
+  const containerElement = disable ? 'div' : href ? Link : 'button';
+
   return (
-    <Container>
+    <Container
+      as={containerElement}
+      data-testid="container"
+      onClick={onClick}
+      to={href}
+    >
       <CardBackground
         className="c-product-card__background"
         data-testid="product-card-background"

@@ -9,16 +9,23 @@ import { UnavailabilityMessage } from './UnavailabilityMessage';
 export const ProductCard = ({
   product: { staticId, displayName, currentPrice, imgSrc, inStock } = {},
   onClick,
-  ...dataAttributes
+  href,
+  ...props
 }) => {
   if (displayName) {
-    const isUnavailable = !inStock || !onClick;
+    const isUnavailable = !inStock || (!onClick && !href);
     return (
-      <Card imgSrc={imgSrc} {...dataAttributes}>
+      <Card
+        imgSrc={imgSrc}
+        disable={isUnavailable}
+        href={href}
+        onClick={onClick}
+        {...props}
+      >
         {isUnavailable ? (
           <UnavailabilityMessage />
         ) : (
-          <TEMPORARY_BUTTON onClick={onClick}>buy now</TEMPORARY_BUTTON>
+          <TEMPORARY_BUTTON faux>buy now</TEMPORARY_BUTTON>
         )}
         <ProductDetails displayName={displayName} currentPrice={currentPrice} />
       </Card>

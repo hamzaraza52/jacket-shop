@@ -9,13 +9,14 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
     bottom: 0px;
     display: flex;
     flex-flow: column;
+    font: 400 15px system-ui;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
     width: 100%;
 
-    b:first-child {
+    b:first-of-type {
       margin-top: 0.5em;
     }
 
@@ -31,6 +32,7 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
     font: '400 1em system-ui',
     color: `#${light ? '9b9b9b' : '1c1c1c'}`
   }));
+
   return (
     <TextContainer>
       {displayName && (
