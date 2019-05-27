@@ -41,6 +41,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "build-storybook": "build-storybook",
+    "commit": "python3 ./scripts/commit.py",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
