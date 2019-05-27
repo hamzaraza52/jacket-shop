@@ -24,7 +24,12 @@ This component supports the following custom props:
     - inStock (`Boolean`): is the product in stock.
 - onClick: `Function`
   - **optional**
-    -the function to be called when the card button is clicked.
+    - the function to be called when the card button is clicked.
+    - can only be used if an href is not included
+- href: `String`
+  - **optional**
+    - the pathname of the page to navigate to.
+    - takes priority over the onClick
 - data-testid: `String`
 
   - **optional**
