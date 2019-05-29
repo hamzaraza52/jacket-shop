@@ -1,1 +1,1 @@
-export { Masthead } from './components/masthead';
+export { Masthead } from './components/Masthead';
