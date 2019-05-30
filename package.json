@@ -65,8 +65,8 @@
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "start-storybook -p 6006",
-    "test": "jest --config jest.config.js --passWithNoTests",
-    "test:watch": "jest --config jest.config.js --passWithNoTests --watch"
+    "test": "jest --config jest.config.js",
+    "test:watch": "jest --config jest.config.js --watch"
   },
   "repository": {
     "type": "git",

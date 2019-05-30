@@ -25,11 +25,15 @@ describe('Hero', () => {
     expect(queryByTestId('child-component')).toBeTruthy();
   });
 
-  it('renders the Hero component with a custom data-testid', () => {
-    const { queryByTestId } = render(
-      <Hero src="/some-source/image.jpeg" data-testid="custom-testid" />
+  it('renders the Hero component with custom props', () => {
+    const { container } = render(
+      <Hero
+        src="/some-source/image.jpeg"
+        data-some-custom-value="some-custom-value"
+      />
     );
-    expect(queryByTestId('custom-testid')).toBeTruthy();
-    expect(queryByTestId('hero-atom')).toBeFalsy();
+    expect(
+      container.querySelector('[data-some-custom-value="some-custom-value"]')
+    ).toBeTruthy();
   });
 });
