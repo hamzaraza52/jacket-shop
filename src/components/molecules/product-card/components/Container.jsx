@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
+import { cardHeight, cardWidth } from '../constants';
 
 export const Container = styled.div`
   background-color: inherit;
   border: none;
-  height: 400px;
-  width: 275px;
+  height: ${cardHeight};
+  width: ${cardWidth};
 
   :hover {
     .c-product-card__background {

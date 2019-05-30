@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { Container } from './Container';
+import { cardHeight, cardWidth } from '../constants';
 
 export const Card = ({
   imgSrc,
@@ -24,28 +25,28 @@ export const Card = ({
     transition: 0.3s all;
     top: -20px;
     left: 0px;
-    width: 275px;
-    height: 400px;
+    width: ${cardWidth};
+    height: ${cardHeight};
   `;
 
   const CardFade = styled.div`
     background-color: #2b2b2b;
-    height: 400px;
     left: 0px;
     opacity: 0;
     position: absolute;
     transition: 0.3s all;
     top: 0px;
-    width: 275px;
+    width: ${cardWidth};
+    height: ${cardHeight};
   `;
 
   const CardContent = styled.div`
     box-shadow: 0px 0px 2px #cccccc;
-    width: 275px;
-    height: 400px;
     position: absolute;
     top: 0px;
     left: 0px;
+    width: ${cardWidth};
+    height: ${cardHeight};
   `;
 
   const containerElement = disable ? 'div' : href ? Link : 'button';

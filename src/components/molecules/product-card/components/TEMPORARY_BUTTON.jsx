@@ -10,7 +10,7 @@ export const TEMPORARY_BUTTON = ({ children, onClick, faux }) => {
     color: #ededed;
     display: flex;
     flex-direction: column;
-    font: 400 1.6em system-ui;
+    font: 400 1.6em arial;
     font-style: italic;
     height: 16%;
     justify-content: center;

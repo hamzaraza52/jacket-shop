@@ -7,7 +7,7 @@ export const UnavailabilityMessage = () => {
     box-shadow: 0px 0px 5px #2d2d2d;
     color: #ededed;
     display: flex;
-    font: 400 1em system-ui;
+    font: 400 1em arial;
     font-style: italic;
     height: 10%;
     justify-content: center;

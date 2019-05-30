@@ -9,7 +9,7 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
     bottom: 0px;
     display: flex;
     flex-flow: column;
-    font: 400 15px system-ui;
+    font: 400 15px arial;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -29,7 +29,7 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
     textAlign: 'center',
     marginTop: '0px',
     height: '1.2em',
-    font: '400 1em system-ui',
+    font: '400 1em arial',
     color: `#${light ? '9b9b9b' : '1c1c1c'}`
   }));
 
