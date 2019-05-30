@@ -6,7 +6,7 @@ export const TEMPORARY_BUTTON = ({ children, onClick, faux }) => {
   const StyledButton = styled.button`
     background-image: linear-gradient(to right, #3b5f91, #51828c);
     border-style: none;
-    box-shadow: 0px 0px 5px #2d2d2d;
+    box-shadow: 0 0 5px #2d2d2d;
     color: #ededed;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ export const TEMPORARY_BUTTON = ({ children, onClick, faux }) => {
     margin-top: 60%;
     opacity: 0;
     text-align: center;
-    text-shadow: 2px 0px 0px #2d2d2d;
+    text-shadow: 2px 0 0 #2d2d2d;
     transition: 0.3s all;
     width: 75%;
 

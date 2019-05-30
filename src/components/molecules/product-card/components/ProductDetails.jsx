@@ -6,7 +6,7 @@ import { formatPrice } from '../../../../utils/format-price/format-price';
 export const ProductDetails = ({ displayName, currentPrice }) => {
   const TextContainer = styled.div`
     background-color: rgba(220, 220, 220, 0.6);
-    bottom: 0px;
+    bottom: 0;
     display: flex;
     flex-flow: column;
     font: 400 15px arial;
@@ -27,7 +27,7 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
 
   const StyledText = styled.p(({ light }) => ({
     textAlign: 'center',
-    marginTop: '0px',
+    marginTop: '0',
     height: '1.2em',
     font: '400 1em arial',
     color: `#${light ? '9b9b9b' : '1c1c1c'}`

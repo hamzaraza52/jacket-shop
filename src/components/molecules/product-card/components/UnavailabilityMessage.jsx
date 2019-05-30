@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const UnavailabilityMessage = () => {
   const Message = styled.div`
     background-image: linear-gradient(to right, #aa4931, #d1583a);
-    box-shadow: 0px 0px 5px #2d2d2d;
+    box-shadow: 0 0 5px #2d2d2d;
     color: #ededed;
     display: flex;
     font: 400 1em arial;
@@ -16,7 +16,7 @@ export const UnavailabilityMessage = () => {
     margin-top: 60%;
     padding-top: 0.2em;
     text-align: center;
-    text-shadow: 1px 0px 0px #2d2d2d;
+    text-shadow: 1px 0 0 #2d2d2d;
     transition: 0.3s all;
     width: 50%;
 

@@ -24,27 +24,27 @@ export const Card = ({
     position: absolute;
     transition: 0.3s all;
     top: -20px;
-    left: 0px;
+    left: 0;
     width: ${cardWidth};
     height: ${cardHeight};
   `;
 
   const CardFade = styled.div`
     background-color: #2b2b2b;
-    left: 0px;
+    left: 0;
     opacity: 0;
     position: absolute;
     transition: 0.3s all;
-    top: 0px;
+    top: 0;
     width: ${cardWidth};
     height: ${cardHeight};
   `;
 
   const CardContent = styled.div`
-    box-shadow: 0px 0px 2px #cccccc;
+    box-shadow: 0 0 2px #cccccc;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: ${cardWidth};
     height: ${cardHeight};
   `;
