@@ -12,6 +12,11 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },{
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
