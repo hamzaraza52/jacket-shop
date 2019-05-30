@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 
 affirmative_answers = {'y', 'ye', 'yes', 'yea', 'yeah', 'dolphin squeaks'}
