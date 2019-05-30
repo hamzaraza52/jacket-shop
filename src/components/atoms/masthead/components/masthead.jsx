@@ -14,7 +14,7 @@ export const Masthead = ({ src, children, ...props }) => {
     display: flex;
     align-items: center;
     background-color: black;
-  `;   
+  `;
   
   const Logo = styled.img`
     width: ${logoSize}px;
