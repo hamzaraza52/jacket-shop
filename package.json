@@ -63,6 +63,7 @@
     "commit": "python3 ./scripts/commit.py",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "lunch": "python3 ./scripts/lunch_shuffler.py",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "start-storybook -p 6006",
