@@ -5,11 +5,15 @@ describe('format price', () => {
     expect(formatPrice(5)).toEqual('£5.00');
   });
 
-  it('formats floating point numbers', () => {
+  it('formats decimal numbers', () => {
     expect(formatPrice(12.75)).toEqual('£12.75');
   });
 
-  it('returns an empty string if no value is given', () => {
-    expect(formatPrice()).toEqual('');
+  it('returns an empty string if an undefined price is given', () => {
+    expect(formatPrice(undefined)).toEqual('');
+  });
+
+  it('returns an empty string if a null price is given', () => {
+    expect(formatPrice(null)).toEqual('');
   });
 });
