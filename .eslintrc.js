@@ -2,7 +2,7 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true
   },
-  extends: ['react-app', 'prettier'],
+  extends: ['react-app', 'prettier', 'eslint:recommended'],
   env: {
     es6: true,
     browser: true
@@ -10,13 +10,15 @@ module.exports = {
   parser: 'babel-eslint',
   root: true,
   rules: {
+    camelcase: 'off',
+    'consistent-return': ['off', { treatUndefinedAsUnspecified: true }],
     'global-require': 'off',
     'new-cap': ['error', { capIsNewExceptions: ['Record', 'List'] }],
-    'no-confusing-arrow': 'off',
-    'no-console': ['error'],
-    'no-mixed-operators': 'off',
-    camelcase: 'off',
-    'consistent-return': ['off', { treatUndefinedAsUnspecified: true }]
+    'no-confusing-arrow': 'warn',
+    'no-console': 'error',
+    'no-mixed-operators': 'warn',
+    'no-trailing-spaces': 'error',
+    'no-unneeded-ternary': 'warn'
   },
   settings: {
     'import/ignore': [
