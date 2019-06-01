@@ -6,22 +6,38 @@ export const Container = styled.div`
   border: none;
   height: ${cardHeight};
   width: ${cardWidth};
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  * {
+    transition: 0.3s all;
+  }
+
+  > * {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .background {
+    top: -20px;
+  }
 
   :hover {
-    .c-product-card__background {
+    .background {
       transform: scale(1.05);
     }
 
-    .c-product-card__fade {
+    .fade {
       opacity: 0.2;
     }
 
-    .c-button {
+    .button {
       opacity: 1;
-    }
-
-    .c-product-card__unavailability-message {
-      opacity: 1;
+      margin-top: 60%;
     }
   }
 `;

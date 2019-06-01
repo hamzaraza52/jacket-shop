@@ -74,7 +74,7 @@ describe('product card', () => {
       const { queryByTestId, container } = render(
         <ProductCard product={mockProduct} onClick={() => {}} />
       );
-      expect(queryByTestId('container')).toBeTruthy();
+      expect(queryByTestId('product-card-molecule')).toBeTruthy();
       expect(container.querySelector('button')).toBeTruthy();
       expect(container.querySelector('a')).toBeFalsy();
     });
@@ -87,7 +87,7 @@ describe('product card', () => {
           href="/some-href/"
         />
       );
-      expect(queryByTestId('container')).toBeTruthy();
+      expect(queryByTestId('product-card-molecule')).toBeTruthy();
       expect(container.querySelector('button')).toBeFalsy();
       expect(container.querySelector('a')).toBeTruthy();
     });
@@ -100,7 +100,7 @@ describe('product card', () => {
           href="/some-href/"
         />
       );
-      expect(queryByTestId('container')).toBeTruthy();
+      expect(queryByTestId('product-card-molecule')).toBeTruthy();
       expect(container.querySelector('button')).toBeFalsy();
       expect(container.querySelector('a')).toBeFalsy();
     });
@@ -109,7 +109,7 @@ describe('product card', () => {
       const { queryByTestId, container } = render(
         <ProductCard product={mockProduct} />
       );
-      expect(queryByTestId('container')).toBeTruthy();
+      expect(queryByTestId('product-card-molecule')).toBeTruthy();
       expect(container.querySelector('button')).toBeFalsy();
       expect(container.querySelector('a')).toBeFalsy();
     });

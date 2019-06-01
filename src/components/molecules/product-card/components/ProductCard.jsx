@@ -4,7 +4,6 @@ import { Card } from './Card';
 import { ProductDetails } from './ProductDetails';
 //TODO: replace with button atom when it is finished
 import { TEMPORARY_BUTTON } from './TEMPORARY_BUTTON';
-import { UnavailabilityMessage } from './UnavailabilityMessage';
 
 export const ProductCard = ({
   product: { staticId, displayName, currentPrice, imgSrc, inStock } = {},
@@ -22,11 +21,9 @@ export const ProductCard = ({
         onClick={onClick}
         {...props}
       >
-        {isUnavailable ? (
-          <UnavailabilityMessage />
-        ) : (
-          <TEMPORARY_BUTTON faux>buy now</TEMPORARY_BUTTON>
-        )}
+        <TEMPORARY_BUTTON faux disabled={isUnavailable}>
+          {isUnavailable ? 'Currently\nUnavailable' : 'buy now'}
+        </TEMPORARY_BUTTON>
         <ProductDetails displayName={displayName} currentPrice={currentPrice} />
       </Card>
     );

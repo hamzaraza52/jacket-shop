@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, number, select } from '@storybook/addon-knobs';
 
 import { ProductCard } from './components/ProductCard';
 import readMe from './README.md';
@@ -28,8 +28,8 @@ storiesOf('Molecules | Product Card', module)
             imgSrc: text('Image Source', exampleImgSrc),
             inStock: boolean('In Stock?', true)
           }}
-          href={text('Href', '/')}
-          onClick={() => {}}
+          href={text('href', '/')}
+          onClick={select('onClick', [() => {}, null], null)}
         />
       </Container>
     ),

@@ -31,7 +31,6 @@ This component supports the following custom props:
     - the pathname of the page to navigate to.
     - takes priority over the onClick
 - data-testid: `String`
-
   - **optional**
   - defaults to "product-card-molecule".
   - use for testing.
