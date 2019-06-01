@@ -72,8 +72,8 @@
     "start": "npm run develop",
     "storybook": "start-storybook -p 6006",
     "lint": "jest --config ./config/jest/jest.config.lint.js",
-    "test": "jest --config ./config/jest/jest.config.test.js --passWithNoTests",
-    "test:watch": "jest --config ./config/jest/jest.config.test.js --passWithNoTests --watch"
+    "test": "jest --config ./config/jest/jest.config.test.js",
+    "test:watch": "jest --config ./config/jest/jest.config.test.js --watch"
   },
   "repository": {
     "type": "git",
