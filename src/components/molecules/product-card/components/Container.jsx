@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: relative;
   display: block;
   overflow: hidden;
+  box-shadow: 0 0 2px #cccccc;
 
   * {
     transition: 0.3s all;

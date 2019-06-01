@@ -25,10 +25,6 @@ export const Card = ({
     opacity: 0;
   `;
 
-  const CardContent = styled.div`
-    box-shadow: 0 0 2px #cccccc;
-  `;
-
   const getContainerElement = () => {
     if (disable) return 'div';
     if (href) return Link;
@@ -48,7 +44,7 @@ export const Card = ({
         data-testid="product-card-background"
       />
       <CardFade className="fade" />
-      <CardContent>{children}</CardContent>
+      <div>{children}</div>
     </Container>
   );
 };
