@@ -15,10 +15,13 @@ export const TEMPORARY_BUTTON = ({ children, disabled, faux }) => {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 80%;
     opacity: 0;
+    position: relative;
     text-align: center;
     text-shadow: 2px 0 0 #2d2d2d;
     width: 75%;
+    z-index: 2;
   `;
 
   const DisabledButton = styled(StyledButton)`

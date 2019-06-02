@@ -24,6 +24,7 @@ export const Card = ({
   const CardFade = styled.div`
     background-color: #2b2b2b;
     opacity: 0;
+    z-index: 1;
   `;
 
   const getContainerElement = () => {

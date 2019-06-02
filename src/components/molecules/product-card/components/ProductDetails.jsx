@@ -5,7 +5,7 @@ import { formatPrice } from '../../../../utils/format-price/format-price';
 
 export const ProductDetails = ({ displayName, currentPrice }) => {
   const TextContainer = styled.div`
-    background-color: rgba(220, 220, 220, 0.6);
+    background-color: #ffffff;
     bottom: 0;
     display: flex;
     flex-flow: column;

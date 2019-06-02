@@ -10,7 +10,7 @@ export const Container = styled.div`
   position: relative;
   display: block;
   overflow: hidden;
-  box-shadow: 0 0 2px #cccccc;
+  box-shadow: 0 0 1px #cccccc;
 
   * {
     transition: 0.3s all;
@@ -28,7 +28,9 @@ export const Container = styled.div`
     top: -20px;
   }
 
-  :hover {
+  :hover, :focus {
+    outline: none;
+    
     .background {
       transform: scale(1.05);
     }
