@@ -1,6 +1,8 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
+import { StaticQuery } from './atoms'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -26,7 +28,8 @@ const Image = () => (
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  />
+  >
+    {data => <Img fluid={data?.placeholderImage?.childImageSharp?.fluid} />}
+  </StaticQuery>
 );
 export default Image;

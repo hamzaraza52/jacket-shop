@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery } from './atoms';
 
 import Header from './header';
 import './layout.css';
@@ -23,9 +23,10 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+  >
+    {({ site }) => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={site.siteMetadata.title} />
         <div
           style={{
             margin: `0 auto`,
@@ -43,7 +44,7 @@ const Layout = ({ children }) => (
         </div>
       </>
     )}
-  />
+  </StaticQuery>
 );
 
 Layout.propTypes = {
