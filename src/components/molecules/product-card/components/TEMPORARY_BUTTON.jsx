@@ -3,13 +3,18 @@ import styled from '@emotion/styled';
 
 //TODO: REMOVE THIS FILE WHEN BUTTON ATOM IS COMPLETED
 export const TEMPORARY_BUTTON = ({ children, disabled, faux }) => {
+  const gradientColours = disabled ? '#aa4931, #d85e6a' : '#3b5f91, #51828c';
+  const show = `@media screen and (max-width: 1024px) {
+      margin-top: 60%;
+      opacity: 1;
+    }`;
   const StyledButton = styled.button`
-    background-image: linear-gradient(to right, #3b5f91, #51828c);
+    background-image: linear-gradient(to right, ${gradientColours});
     box-shadow: 0 0 5px #2d2d2d;
     color: #ededed;
     display: flex;
     flex-direction: column;
-    font: 400 1.6em arial;
+    font: 400 ${disabled ? '1' : '1.6'}em arial;
     font-style: italic;
     height: 16%;
     justify-content: center;
@@ -22,16 +27,8 @@ export const TEMPORARY_BUTTON = ({ children, disabled, faux }) => {
     text-shadow: 2px 0 0 #2d2d2d;
     width: 75%;
     z-index: 2;
-  `;
 
-  const DisabledButton = styled(StyledButton)`
-    background-image: linear-gradient(to right, #aa4931, #d85e6a);
-    font-size: 1em;
-
-    @media screen and (max-width: 1024px) {
-      margin-top: 60%;
-      opacity: 1;
-    }
+    ${disabled && show}
   `;
 
   const props = {
@@ -40,9 +37,5 @@ export const TEMPORARY_BUTTON = ({ children, disabled, faux }) => {
     'data-testid': 'button-atom'
   };
 
-  return disabled ? (
-    <DisabledButton {...props}>{children}</DisabledButton>
-  ) : (
-    <StyledButton {...props}>{children}</StyledButton>
-  );
+  return <StyledButton {...props}>{children}</StyledButton>;
 };
