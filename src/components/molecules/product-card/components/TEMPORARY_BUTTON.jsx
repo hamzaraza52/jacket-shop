@@ -31,11 +31,13 @@ export const TEMPORARY_BUTTON = ({ children, disabled, faux }) => {
     ${disabled && show}
   `;
 
-  const props = {
-    className: 'button',
-    as: faux && 'div',
-    'data-testid': 'button-atom'
-  };
-
-  return <StyledButton {...props}>{children}</StyledButton>;
+  return (
+    <StyledButton
+      as={faux && 'div'}
+      className="button"
+      data-testid="button-atom"
+    >
+      {children}
+    </StyledButton>
+  );
 };
