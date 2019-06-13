@@ -1,4 +1,5 @@
-import Masthead from './Masthead';
+import React from 'react';
+import { Masthead } from './Masthead';
 import { render } from 'react-testing-library';
 
 const imgSrc = 'https://peepo.gg/';
@@ -6,16 +7,16 @@ const defaultProps = {
     src: imgSrc
 };
 
-describe('gimme the loot', () => {
-    const renderer = (props = defaultProps) => {
-        render(<Masthead { ...props } />);
-    };
+describe('Masthead component', () => {
+    const renderer = props => render(<Masthead { ...props } />);
 
-    it('should render :)', () => {
-        
+    it('should render correctly)', () => {
+        const { getByTestId } = renderer(defaultProps);
+        expect(getByTestId('masthead-container')).toBeTruthy();
     });
 
-    it('', ( )=> {
-        
+    it('should render correctly without props)', () => {
+        const { getByTestId } = renderer();
+        expect(getByTestId('masthead-container')).toBeTruthy();
     });
 });
