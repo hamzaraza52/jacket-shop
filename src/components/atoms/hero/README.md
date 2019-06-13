@@ -7,7 +7,7 @@ The `Hero` component takes an image and displays it the full width of the screen
 To import into a `.jsx` template file use:
 
 ```js
-import { Hero } from '../atoms';
+import { Hero } from '../../../atoms';
 ```
 
 ## Props
