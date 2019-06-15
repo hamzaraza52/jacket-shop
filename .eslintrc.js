@@ -13,7 +13,7 @@ module.exports = {
     camelcase: 'off',
     'consistent-return': ['off', { treatUndefinedAsUnspecified: true }],
     'global-require': 'off',
-    'new-cap': ['error', { capIsNewExceptions: ['Record', 'List'] }],
+    'new-cap': 'off',
     'no-confusing-arrow': 'warn',
     'no-console': 'error',
     'no-mixed-operators': 'warn',
