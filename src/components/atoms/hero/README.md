@@ -47,4 +47,3 @@ With child components:
   <em>Some Text!</em>
 </Hero>
 ```
-
