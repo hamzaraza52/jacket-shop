@@ -10,7 +10,7 @@ import {
 } from '@storybook/addon-knobs';
 
 import { ProductCard } from './components/ProductCard';
-import readMe from './README.md';
+import readme from './README.md';
 
 const exampleImgSrc =
   'https://cdn.shopify.com/s/files/1/0015/2774/2577/products/product-image-670060808_800x.jpg?v=1543901544';
@@ -32,5 +32,5 @@ storiesOf('Molecules | Product Card', module)
         onClick={select('onClick', [() => {}, null], null)}
       />
     ),
-    { notes: { markdown: readMe } }
+    { notes: { markdown: readme } }
   );
