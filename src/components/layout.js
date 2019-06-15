@@ -7,8 +7,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery } from './atoms';
+import { graphql } from 'gatsby';
 
+import { StaticQuery } from './atoms';
 import Header from './header';
 import './layout.css';
 

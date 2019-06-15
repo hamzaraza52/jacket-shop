@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import readMe from './README.md';
-import { StaticQuery } from '.';
+import readme from './README.md';
 
 storiesOf('Atoms | StaticQuery', module).add('default', () => <div/>, {
-  notes: { markdown: readMe }
+  notes: { markdown: readme }
 });

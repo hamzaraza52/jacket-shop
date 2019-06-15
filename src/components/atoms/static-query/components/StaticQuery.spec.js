@@ -4,33 +4,37 @@ import { useStaticQuery } from 'gatsby';
 import { StaticQuery } from './StaticQuery';
 
 const returnedData = 'foo';
-const childComponent = jest.fn(() => <div/>);
+const childComponent = jest.fn(() => <div />);
 
 beforeEach(() => {
   useStaticQuery.mockImplementationOnce(() => returnedData);
 });
 
-describe('StaticQuery', () => {
+describe('static query', () => {
   afterEach(() => {
-    jest.resetAllMocks()
+    jest.resetAllMocks();
   });
 
   it('makes a static graphql call to correctly fetch data', () => {
     const query = 'some-query';
-    StaticQuery({ children: childComponent, query: query });
+    expect(StaticQuery({ children: childComponent, query: query })).toEqual(
+      <div />
+    );
     expect(useStaticQuery).toHaveBeenCalledWith(query);
     expect(childComponent).toHaveBeenCalledWith(returnedData);
   });
 
-  it('handles null', () => {
-    StaticQuery({ children: childComponent, query: null });
-    expect(useStaticQuery).not.toHaveBeenCalled();
-    expect(childComponent).not.toHaveBeenCalled();
+  it('returns null if query is null', () => {
+    expect(StaticQuery({ children: childComponent, query: null })).toBe(null);
+    expect(useStaticQuery).toHaveBeenCalledWith(null);
+    expect(childComponent).toHaveBeenCalledWith(returnedData);
   });
 
-  it('handles undefined', () => {
-    StaticQuery({ children: childComponent, query: undefined });
-    expect(useStaticQuery).not.toHaveBeenCalled();
-    expect(childComponent).not.toHaveBeenCalled();
+  it('returns null if query is undefined', () => {
+    expect(StaticQuery({ children: childComponent, query: undefined })).toBe(
+      null
+    );
+    expect(useStaticQuery).toHaveBeenCalledWith(undefined);
+    expect(childComponent).toHaveBeenCalledWith(returnedData);
   });
 });
