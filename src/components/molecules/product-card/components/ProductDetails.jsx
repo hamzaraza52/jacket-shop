@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { formatPrice } from '../../../../utils/format-price/format-price';
+import { Price } from '../../../atoms';
 
-export const ProductDetails = ({ displayName, currentPrice }) => {
+export const ProductDetails = ({
+  displayName,
+  currentPrice,
+  originalPrice
+}) => {
   const TextContainer = styled.div`
     background-color: #ffffff;
     bottom: 0;
@@ -25,6 +29,10 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
     color: `#${light ? '9b9b9b' : '1c1c1c'}`
   }));
 
+  const StyledPrice = styled(Price)`
+    text-align: center;
+  `;
+
   return (
     <TextContainer>
       {displayName && (
@@ -33,9 +41,10 @@ export const ProductDetails = ({ displayName, currentPrice }) => {
         </StyledText>
       )}
       {currentPrice && (
-        <StyledText light data-testid="product-card-price">
-          {formatPrice(currentPrice)}
-        </StyledText>
+        <StyledPrice
+          price={currentPrice}
+          originalPrice={originalPrice}
+        />
       )}
     </TextContainer>
   );

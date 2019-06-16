@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { storiesOf } from '@storybook/react';
 import {
   withKnobs,
@@ -9,7 +8,7 @@ import {
   select
 } from '@storybook/addon-knobs';
 
-import { ProductCard } from './components/ProductCard';
+import { ProductCard } from '.';
 import readme from './README.md';
 
 const exampleImgSrc =
@@ -25,6 +24,7 @@ storiesOf('Molecules | Product Card', module)
           staticId: text('Product ID', 'SOME_ID'),
           displayName: text('Display Name', 'Jacket Potatoe'),
           currentPrice: number('Current Price', 50),
+          originalPrice: number('Original Price', null),
           imgSrc: text('Image Source', exampleImgSrc),
           inStock: boolean('In Stock?', true)
         }}

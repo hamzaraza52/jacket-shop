@@ -57,15 +57,35 @@ describe('product card', () => {
       const { queryByTestId, queryByText } = render(
         <ProductCard product={{ ...mockProduct, currentPrice: price }} />
       );
-      expect(queryByTestId('product-card-price')).toBeTruthy();
+      expect(queryByTestId('main-price')).toBeTruthy();
+      expect(queryByTestId('original-price')).toBeFalsy();
       expect(queryByText(`£50.00`)).toBeTruthy();
+    });
+
+    it('renders the correct text if the product contains data a current price and an original price', () => {
+      const price = 50.0;
+      const originalPrice = 75;
+      const { queryByTestId, queryByText } = render(
+        <ProductCard
+          product={{
+            ...mockProduct,
+            currentPrice: price,
+            originalPrice: originalPrice
+          }}
+        />
+      );
+      expect(queryByTestId('main-price')).toBeTruthy();
+      expect(queryByTestId('original-price')).toBeTruthy();
+      expect(queryByText(`£50.00`)).toBeTruthy();
+      expect(queryByText(`£75.00`)).toBeTruthy();
     });
 
     it('does not render if the product data does not contain a current price', () => {
       const { queryByTestId } = render(
         <ProductCard product={{ ...mockProduct, currentPrice: undefined }} />
       );
-      expect(queryByTestId('product-card-price')).toBeFalsy();
+      expect(queryByTestId('main-price')).toBeFalsy();
+      expect(queryByTestId('original-price')).toBeFalsy();
     });
   });
 

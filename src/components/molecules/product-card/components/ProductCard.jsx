@@ -6,7 +6,14 @@ import { ProductDetails } from './ProductDetails';
 import { TEMPORARY_BUTTON } from './TEMPORARY_BUTTON';
 
 export const ProductCard = ({
-  product: { staticId, displayName, currentPrice, imgSrc, inStock } = {},
+  product: {
+    staticId,
+    displayName,
+    currentPrice,
+    originalPrice,
+    imgSrc,
+    inStock
+  } = {},
   onClick,
   href,
   ...props
@@ -24,7 +31,11 @@ export const ProductCard = ({
         <TEMPORARY_BUTTON faux disabled={isUnavailable}>
           {isUnavailable ? 'Currently\nUnavailable' : 'buy now'}
         </TEMPORARY_BUTTON>
-        <ProductDetails displayName={displayName} currentPrice={currentPrice} />
+        <ProductDetails
+          displayName={displayName}
+          currentPrice={currentPrice}
+          originalPrice={originalPrice}
+        />
       </Card>
     );
   }
